@@ -18,8 +18,7 @@ int isStackEmpty(struct stack *stack) {
 	return (stack->top == -1 || !stack);
 }
 
-int main()
-{
+int main() {
 	printf("\n");
 	printf("Sorting an Array using 2 Stacks. \n");
 	printf("\n");
@@ -33,7 +32,7 @@ int main()
 
 	if ((array = (int *)calloc(n, sizeof(int))) == NULL) {
 		printf("Memory not available. \nExiting! \n");
-		exit(-1);
+		exit(1);
 	}
 
 	printf("Input Data : \n");
