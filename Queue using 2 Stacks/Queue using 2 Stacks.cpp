@@ -12,6 +12,11 @@ struct stack {
 	struct stackNode *top;
 };
 
+struct queue {
+	struct stack *stack1;
+	struct stack *stack2;
+};
+
 void push(struct stack *stack, int data) {
 	struct stackNode *temp;
 
@@ -41,57 +46,70 @@ int pop(struct stack *stack) {
 	return data;
 }
 
-int top(struct stack *stack) {
-	if (isStackEmpty(stack)) {
-		return INT_MIN;
-	}
-	return stack->top->data;
+void enqueue(struct queue *queue, int data) {
+	push(queue->stack1, data);
 }
 
-void deleteStack(struct stack *stack) {
-	free(stack);
+int dequeue(struct queue *queue) {
+	if (!isStackEmpty(queue->stack2)) {
+		return pop(queue->stack2);
+	}
+	else {
+		while (!isStackEmpty(queue->stack1)) {
+			push(queue->stack2, pop(queue->stack1));
+		}
+		return pop(queue->stack2);
+	}
+}
+
+void deleteQueue(struct queue *queue) {
+	free(queue);
 }
 
 int main() {
 	printf("\n");
-	printf("Stack using Linked List. \n");
+	printf("Queue using 2 stacks. \n");
 	printf("\n");
 
-	printf("Initialising the stack \n");
+	printf("Initialising the Queue \n");
 	printf("\n");
 
-	struct stack *stack = (struct stack *)malloc(sizeof(struct stack));
+	struct queue *queue = (struct queue *)malloc(sizeof(struct queue));
 
-	if (!stack) {
-		printf("Stack cannot be created. \nExiting. \n");
+	if (!queue) {
+		printf("Queue cannot be created. \nExiting. \n");
 		exit(1);
 	}
 
-	stack->top = NULL;
+	queue->stack1 = (struct stack *)malloc(sizeof(struct stack));
+	queue->stack1->top = NULL;
+
+	queue->stack2 = (struct stack *)malloc(sizeof(struct stack));
+	queue->stack2->top = NULL;
 
 	int choice;
 	bool isExit = true;
 	int number;
 
 	while (isExit) {
-		printf("Stack Operations : \n1. Push \n2. Pop \n3. Exit \n");
+		printf("Stack Operations : \n1. Enqueue \n2. Dequeue \n3. Exit \n");
 		scanf("%d", &choice);
 		printf("\n");
 
 		switch (choice) {
 		case 1:
-			printf("Number to Push : ");
+			printf("Number to Enqueue : ");
 			scanf("%d", &number);
 			printf("\n");
-			push(stack, number);
+			enqueue(queue, number);
 			break;
 		case 2:
-			number = pop(stack);
+			number = dequeue(queue);
 			if (number == INT_MIN) {
-				printf("Nothing to Pop. \nStack is Empty. \n");
+				printf("Nothing to Dequeue. \nQueue is Empty. \n");
 				break;
 			}
-			printf("Number Popped : %d \n", number);
+			printf("Number Dequeued : %d \n", number);
 			break;
 		case 3:
 			printf("Exiting. \n");
@@ -103,9 +121,7 @@ int main() {
 		}
 
 		printf("\n");
-	}	
-
-	deleteStack(stack);
+	}
 
 	return 0;
 }

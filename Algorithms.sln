@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sorting an Array using 2 St
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack using Linked List", "Stack using Linked List\Stack using Linked List.vcxproj", "{CF93026C-ECC2-43D8-B5BD-425B57169677}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Queue using 2 Stacks", "Queue using 2 Stacks\Queue using 2 Stacks.vcxproj", "{209DC182-6C86-48AA-8464-660B469A50AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{CF93026C-ECC2-43D8-B5BD-425B57169677}.Debug|Win32.Build.0 = Debug|Win32
 		{CF93026C-ECC2-43D8-B5BD-425B57169677}.Release|Win32.ActiveCfg = Release|Win32
 		{CF93026C-ECC2-43D8-B5BD-425B57169677}.Release|Win32.Build.0 = Release|Win32
+		{209DC182-6C86-48AA-8464-660B469A50AB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{209DC182-6C86-48AA-8464-660B469A50AB}.Debug|Win32.Build.0 = Debug|Win32
+		{209DC182-6C86-48AA-8464-660B469A50AB}.Release|Win32.ActiveCfg = Release|Win32
+		{209DC182-6C86-48AA-8464-660B469A50AB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
