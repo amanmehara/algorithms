@@ -14,9 +14,21 @@ int main() {
 	scanf("%d", &k);
 	printf("\n");
 
+	if (k < 0) {
+		printf("Incorrect Range \n");
+		printf("\n");
+		return 1;
+	}
+
 	printf("Total Elements : ");
 	scanf("%d", &n);
 	printf("\n");
+
+	if (n < 1) {
+		printf("Invalid Input \n");
+		printf("\n");
+		return 1;
+	}
 
 	int *A = (int *)calloc((n+1), sizeof(int));
 	int *B = (int *)calloc((n+1), sizeof(int));

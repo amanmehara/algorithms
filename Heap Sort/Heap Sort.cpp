@@ -15,6 +15,12 @@ int main() {
 	scanf("%d", &n);
 	printf("\n");
 
+	if (n < 1) {
+		printf("Invalid Input \n");
+		printf("\n");
+		return 1;
+	}
+
 	int *A = (int *)calloc(n, sizeof(int));
 
 	printf("Unsorted Input \n");
