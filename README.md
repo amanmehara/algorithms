@@ -39,6 +39,11 @@
 - *Nth Fibonacci*
 - *Tower of Hanoi*
 
+**File Handling**
+
+- *File Read*
+- *File Write*
+- *File Copy*
 
 **Scheduling Algorithms**
 
