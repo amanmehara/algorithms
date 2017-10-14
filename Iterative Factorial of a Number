@@ -1,0 +1,14 @@
+//Iterative Factorial
+
+#include<iostream>
+using namespace std;
+int fact(int n){
+int p = n;
+for (int i = n-1; i >1; i--){
+    p = p * i;
+}
+return p;
+}
+int main(){
+cout<<"factorial of 5 is "<<fact(5);
+}
